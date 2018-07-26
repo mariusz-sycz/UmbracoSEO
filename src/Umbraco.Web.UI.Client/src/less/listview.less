@@ -1,0 +1,273 @@
+// Listview
+// -------------------------
+
+.umb-listview{width: auto !important;}
+.umb-listview .dropdown-menu {
+  border: 1px solid @gray-7;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0);
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-submenu:hover > a,
+.dropdown-submenu:focus > a {
+  color: @black;
+  background: @gray-10;
+}
+
+.umb-listview table {
+	border: 1px solid @gray-8;
+}
+
+.umb-listview table caption {
+  background: @white;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.umb-sub-header {
+  padding: 0 0 20px 0;
+}
+
+.umb-sub-header .header-content-right {
+  float: right;
+}
+
+/* listview search */
+.form-search {
+    .inner-addon {
+        position: relative;
+
+        [class^="icon-"], [class*=" icon-"] {
+            position: absolute;
+            padding: 5px 8px;
+            pointer-events: none;
+            top: 0;
+        }
+
+        input[type="text"] {
+            width: 190px;
+        }
+    }
+
+    /* align icon */
+    .left-addon [class^="icon-"], .left-addon [class*=" icon-"] { left: 0; right: inherit; }
+    .right-addon [class^="icon-"], .right-addon [class*=" icon-"] { right: 0; left: inherit; }
+
+    /* add padding */
+    .left-addon input[type="text"]  { padding-left: 30px !important; padding-right: 6px; }
+    .right-addon input[type="text"] { padding-right: 30px; padding-left: 6px !important; }
+}
+
+.umb-listview table form {
+  position: relative;
+  margin: 0;
+}
+
+.umb-listview table input[type="text"] {
+  background: none;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+  width: 60px;
+  padding: 4px 0 4px 20px;
+  border: 1px solid @gray-8;
+}
+
+.umb-listview table input::-webkit-input-placeholder,
+.umb-listview table input:-moz-placeholder,
+.umb-listview table input::-moz-placeholder,
+.umb-listview table input:-ms-input-placeholder {
+  color: @gray-3;
+}
+
+.umb-listview table input[type="text"]:focus {
+  width: 200px;
+  border: 1px solid @gray-8;
+  background: @white;
+  color: @black
+}
+
+.umb-listview table thead a {
+    cursor: default;
+}
+.umb-listview table thead a:hover {
+    text-decoration: none;
+}
+
+.umb-listview table thead a.sortable {
+    cursor: pointer;
+}
+.umb-listview table thead a.sortable span:hover {
+    text-decoration: underline;
+}
+
+.umb-listview .icon-star {
+  color: @gray-8;
+}
+
+.umb-listview .selected i.icon, .umb-listview tbody tr:hover i.icon{display: none}
+.umb-listview .selected input[type="checkbox"],
+.umb-listview tr:hover input[type="checkbox"]{display: inline-block !important;}
+.umb-listview .inactive{color: @gray-8;}
+
+.umb-listview .selected td{font-weight: bold;}
+
+.umb-listview table thead {
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: @white;
+}
+
+.umb-listview table tfoot {
+	background: @gray-10;
+}
+
+.umb-listview table tfoot td:last-child {
+  border-left: none
+}
+
+.umb-listview table tfoot th {
+	padding: 0 20px;
+}
+
+.umb-listview .label {
+  color: @black;
+  text-shadow:none;
+  background: @gray-10;
+  border: 1px solid @gray-8;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.umb-listview .table-striped tbody > tr:nth-child(even) > td, .umb-listview .table-striped tbody > tr:nth-child(even) > th {
+  background-color: @gray-10;
+}
+
+.table-striped tbody > tr:nth-child(odd) > td, .table-striped tbody > tr:nth-child(odd) > th {
+  background: none
+}
+
+/* TEMP */
+
+.umb-listview .table-striped tbody td {
+  position: relative
+}
+
+
+.umb-listview  .table-striped thead input[type="checkbox"] {
+  margin-left: 7px;
+}
+
+.umb-listview  .table-striped tbody input[type="checkbox"] {
+  display: none;
+  margin-left: 7px;
+  z-index: 5;
+}
+
+.umb-listview .table-striped tbody i {
+  display: block;
+  top: 10px;
+  left:6px;
+  padding: 0 0 0 4px;
+  z-index: 6;
+  background: @white;
+  width: 20px;
+  height: 20px;
+}
+
+.umb-listview .table-striped tbody > tr:nth-child(even) > td i, .umb-listview .table-striped tbody > tr:nth-child(even) > th i{
+  background-color: @gray-10;
+}
+
+/* don't hide all icons, e.g. for a sortable handle */
+.umb-listview .table-striped tbody i:not(.handle):hover {
+  display: none !important
+}
+
+/* ---------- LAYOUTS ---------- */
+
+.list-view-layouts {
+
+}
+
+.list-view-layout {
+   display: flex;
+   align-items: center;
+   padding: 10px 15px;
+   background: @gray-10;
+   margin-bottom: 1px;
+}
+
+.list-view-layout__sort-handle {
+   font-size: 14px;
+   color: @gray-8;
+   margin-right: 15px;
+}
+
+.list-view-layout__name {
+   flex: 5;
+   font-weight: bold;
+   margin-right: 15px;
+   display: flex;
+   align-content: center;
+   flex-wrap: wrap;
+   line-height: 1.2em;
+}
+
+.list-view-layout__name-text {
+   margin-right: 3px;
+}
+
+.list-view-layout__system {
+   font-size: 10px;
+   font-weight: normal;
+}
+
+.list-view-layout__path {
+   flex: 10;
+   margin-right: 15px;
+}
+
+.list-view-layout__icon {
+   font-size: 18px;
+   margin-right: 10px;
+   vertical-align: middle;
+   border: 1px solid @gray-8;
+   background: @white;
+   padding: 6px 8px;
+   display: block;
+}
+
+.list-view-layout__icon:hover,
+.list-view-layout__icon:focus,
+.list-view-layout__icon:active {
+   text-decoration: none;
+}
+
+.list-view-layout__remove {
+    position: relative;
+    cursor: pointer;
+}
+
+.list-view-add-layout {
+   margin-top: 10px;
+   color: @turquoise-d1;
+   border: 1px dashed @gray-8;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 5px 0;
+   box-sizing: border-box;
+}
+
+.list-view-add-layout:hover {
+   text-decoration: none;
+}
