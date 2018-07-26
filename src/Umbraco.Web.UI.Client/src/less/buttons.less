@@ -1,0 +1,315 @@
+//
+// Buttons
+// --------------------------------------------------
+
+
+// Base styles
+// --------------------------------------------------
+
+// Core
+.btn {
+  display: inline-block;
+  padding: 6px 14px;
+  margin-bottom: 0; // For input.btn
+  font-size: @baseFontSize;
+  line-height: @baseLineHeight;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background: @btnBackground;
+  color: @black;
+  border: none;
+  box-shadow: none;
+  border-radius: 3px;
+
+    // Hover/focus state
+    &:hover,
+    &:focus {
+        background: @btnBackgroundHighlight;
+        color: @gray-4;
+        background-position: 0 -15px;
+        text-decoration: none;
+
+        // transition is only when going to hover/focus, otherwise the background
+        // behind the gradient (there for IE<=9 fallback) gets mismatched
+        .transition(background-position .1s linear);
+    }
+
+    // Focus state for keyboard and accessibility
+    &:focus {
+        .tab-focus();
+    }
+
+    // Active state
+    &.active,
+    &:active {
+        background-image: none;
+        outline: 0;
+        .box-shadow(~"inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05)");
+    }
+
+    // Disabled state
+    &.disabled,
+    &[disabled],
+    &:disabled:hover {
+        cursor: default;
+        border-color: @btnBorder;
+        .opacity(65);
+        .box-shadow(none);
+    }
+
+}
+
+.btn-group>.btn+.dropdown-toggle {
+    box-shadow: none;
+    -webkit-box-shadow:none;
+}
+
+.btn-group .btn.dropdown-toggle {
+    border-left-width: 1px;
+    border-left-style: solid;
+}
+
+// Button Sizes
+// --------------------------------------------------
+
+// Large
+.btn-large {
+  padding: @paddingLarge;
+  font-size: @fontSizeLarge;
+}
+.btn-large [class^="icon-"],
+.btn-large [class*=" icon-"] {
+  margin-top: 4px;
+  .border-radius(@borderRadiusLarge);
+}
+
+// Small
+.btn-small {
+  padding: @paddingSmall;
+  font-size: @fontSizeSmall;
+  .border-radius(@borderRadiusSmall);
+}
+
+.btn-small [class^="icon-"],
+.btn-small [class*=" icon-"] {
+  margin-top: 0;
+}
+.btn-mini [class^="icon-"],
+.btn-mini [class*=" icon-"] {
+  margin-top: -1px;
+}
+
+// Mini
+.btn-mini {
+  padding: @paddingMini;
+  font-size: @fontSizeMini;
+  .border-radius(@borderRadiusSmall);
+}
+
+
+// Block button
+// -------------------------
+
+.btn-block {
+  display: block;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  .box-sizing(border-box);
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+  margin-top: 5px;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.btn-block {
+    width: 100%;
+  }
+}
+
+// Round button
+.btn-round{
+  font-size: 24px;
+  color: @gray-3;
+  background: @white;
+
+  line-height: 32px;
+  text-align: center;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  height: 32px;
+  width: 32px;
+  overflow: hidden;
+  display: inline-block;
+  z-index: 6666;
+}
+
+
+// Alternate buttons
+// --------------------------------------------------
+
+// Provide *some* extra contrast for those who can get it
+.btn-primary.active,
+.btn-warning.active,
+.btn-danger.active,
+.btn-success.active,
+.btn-info.active,
+.btn-inverse.active,
+.btn-neutral.active {
+  color: rgba(255,255,255,.75);
+}
+
+.btn-primary, 
+.btn-warning,
+.btn-danger,
+.btn-success,
+.btn-info,
+.btn-inverse,
+.btn-neutral {
+  font-weight: bold;
+}
+
+// Set the backgrounds
+// -------------------------
+.btn-primary {
+  .buttonBackground(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight);
+}
+
+// Warning appears are orange
+.btn-warning {
+  .buttonBackground(@btnWarningBackground, @btnWarningBackgroundHighlight);
+}
+// Danger and error appear as red
+.btn-danger {
+  .buttonBackground(@btnDangerBackground, @btnDangerBackgroundHighlight);
+}
+// Success appears as green
+.btn-success {
+  .buttonBackground(@btnSuccessBackground, @btnSuccessBackgroundHighlight);
+}
+// Info appears as a neutral blue
+.btn-info {
+  .buttonBackground(@btnInfoBackground, @btnInfoBackgroundHighlight);
+}
+// Inverse appears as dark gray
+.btn-inverse {
+  .buttonBackground(@btnInverseBackground, @btnInverseBackgroundHighlight);
+}
+// Neutral appears as lighter gray
+.btn-neutral {
+  .buttonBackground(@btnNeutralBackground, @btnNeutralBackgroundHighlight);
+  color: @gray-5;
+  // Hover/focus state
+  &:hover,
+  &:focus {
+    color: @gray-5;
+  }
+
+  &.disabled,
+  &[disabled] {
+    color: @gray-5;
+    .opacity(65);
+  }
+
+}
+
+.btn-install {
+    margin: 40px auto;
+    display: block;
+    padding: 15px 50px;
+    font-size: 16px;
+    border: none;
+    background: @green;
+    color: white;
+    font-weight: bold;
+      &:hover {
+        background: @green-d1;
+		}
+}
+
+// Cross-browser Jank
+// --------------------------------------------------
+
+button.btn,
+input[type="submit"].btn {
+
+  // Firefox 3.6 only I believe
+  &::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+
+  // IE7 has some default padding on button controls
+  *padding-top: 3px;
+  *padding-bottom: 3px;
+
+  &.btn-large {
+    *padding-top: 7px;
+    *padding-bottom: 7px;
+  }
+  &.btn-small {
+    *padding-top: 3px;
+    *padding-bottom: 3px;
+  }
+  &.btn-mini {
+    *padding-top: 1px;
+    *padding-bottom: 1px;
+  }
+
+  // Safari defaults to 1px for input. Ref U4-7721.
+  margin: 0px;
+}
+
+
+// Link buttons
+// --------------------------------------------------
+
+// Make a button look and behave like a link
+.btn-link,
+.btn-link:active,
+.btn-link[disabled] {
+  background-color: transparent;
+  background-image: none;
+  .box-shadow(none);
+}
+.btn-link {
+  border-color: transparent;
+  cursor: pointer;
+  color: @linkColor;
+  .border-radius(0);
+}
+.btn-link:hover,
+.btn-link:focus {
+  color: @linkColorHover;
+  text-decoration: underline;
+  background-color: transparent;
+}
+.btn-link[disabled]:hover,
+.btn-link[disabled]:focus {
+  color: @gray-4;
+  text-decoration: none;
+}
+
+// Make a reverse type of a button link
+.btn-link-reverse{
+    text-decoration:underline;
+  &:hover,
+  &:focus{
+    text-decoration:none;
+  }
+}
+
+.btn-link.-underline {
+    display: inline-block;
+    text-decoration: underline;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
