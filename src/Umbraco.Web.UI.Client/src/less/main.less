@@ -1,0 +1,647 @@
+// Main
+// -------------------------
+
+
+// Utillity classes
+// @Per not sure where to put this part
+// -------------------------
+
+.fill {
+	height: 100%;
+	min-height: 100%;
+}
+.shadow {
+	box-shadow: 3px 0px 7px @gray-8;
+}
+
+.umb-scrollable, .umb-auto-overflow {
+	overflow: auto;
+}
+
+.umb-abstract {
+    display: block;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: @gray-7; 
+}
+
+h5{
+  color: @gray-1;
+  font-weight: bold;
+  font-size: 15px;
+  margin-top: 15px;
+}
+
+h5.-border-bottom {
+	border-bottom: 1px solid @gray-9;
+	padding-bottom: 5px;
+}
+
+h5.-black {
+	color: @black;
+}
+
+/* MISC FORM ELEMENTS */
+.umb-form-actions {
+    background: none;
+    border: none
+}
+.bootstrap-datetimepicker-widget {
+    td {
+        &.active, span.active {
+            background: @turquoise !important;
+        }
+        &.today:not(.active):before {
+            border-bottom-color: @purple-l1 !important;
+        }
+        a[data-action] {
+            padding: 0 !important;
+        }
+        .timepicker-hour,
+        .timepicker-minute,
+        .timepicker-second {
+            margin: 8px 0;
+        }
+    }
+}
+
+.umb-datetime-picker div.info {
+    vertical-align: middle
+}
+
+.umb-userwidget img {
+    float: left;
+    margin-right: 15px;
+}
+.umb-userwidget small {
+    display: block
+}
+.popover-title {
+    display: none
+}
+
+
+/*BUTTONS */
+.thumbnails > li.umb-plus-btn {
+  margin: 0 10px 10px 0
+}
+
+.umb-plus-btn a {
+  border: 2px dashed @gray-8;
+  width: 136px;
+  height: 136px;
+  line-height: 136px;
+  text-align: center;
+  font-size: 50px;
+  display: block;
+  color: @gray-8;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.umb-plus-btn a:hover {
+  border: 2px dashed @black;
+  color: @black
+}
+
+.umb-plus-btn i {
+    vertical-align: middle;
+    margin: auto
+}
+
+/* FORM GRID */
+.umb-pane {
+  margin: 30px 20px;
+}
+.umb-control-group {
+  border-bottom: 1px solid @gray-10;
+  padding-bottom: 20px;
+  margin-bottom: 15px !important;
+}
+
+.umb-control-group.-no-border {
+  border: none;
+}
+
+/* BLOCK MODE */
+.block-form .umb-control-group {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.block-form .umb-control-group label .help-block, 
+.block-form .umb-control-group label small {
+  font-size: 13px;
+  padding-top: 2px;
+  margin-bottom: 5px;
+}
+
+/*COMPACT MODE */
+.compact .umb-pane{margin: 0px 0px 15px 0px;}
+.compact .umb-control-group {
+  border-bottom: 1px solid @gray-10;
+  padding-bottom: 10px;
+  margin-bottom: 5px !important;
+}
+.compact label.control-label {
+  padding-top: 0px !important;
+  margin-bottom: 0px;
+}
+
+.compact .controls-row{padding-top: 0px }
+
+.umb-pane > .umb-control-group:last-child {
+  border: none;
+  padding-bottom: 0 !important;
+}
+
+.umb-control-group .umb-el-wrap {
+  padding: 0
+}
+
+/* LABELS*/
+.umb-control-group label.control-label, .umb-control-group .control-label {
+  text-align: left;
+}
+.umb-control-group label.control-label > div > label {
+  padding-left: 0;
+}
+.umb-control-group label .help-block,
+.umb-control-group label small {
+  font-size: 12px;
+  color: @gray-6;
+  line-height: 1.5em;
+  padding-top: 5px;
+}
+.umb-nolabel .controls {
+  margin-left: 0;
+}
+
+/* CONTROL VALIDATION */
+.umb-control-required {
+    color: @controlRequiredColor;
+}
+
+.controls-row {
+  padding-bottom: 5px;
+  margin-left: 240px;
+}
+
+.umb-user-panel .controls-row {
+    margin-left: 0;
+}
+
+.controls-row label {
+  display: inline-block;
+}
+
+.controls-row > div > label {
+  padding-left: 0;
+}
+
+.block-form .controls-row {
+   margin-left: 0;
+   padding-top: 0;
+}
+
+.hidelabel > div > .controls-row, .hidelabel > .controls-row, .hidelabel > div > .controls {
+  padding: 0;
+  border: none;
+  margin: 0 !important;
+}
+
+.controls-row > .vertical-align-items {
+  display: flex;
+  align-items: center;
+}
+
+.controls-row > .vertical-align-items > input.umb-editor-tiny {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.controls-row > .vertical-align-items > input.umb-editor-tiny:first-child {
+  margin-left: 0;
+}
+
+.thumbnails .selected {
+  border-color: @black;
+  background: @black
+}
+
+.umb-version {
+    color: @gray-7; 
+    position: absolute; 
+    bottom: 5px; 
+    right: 20px;
+}
+
+/* DASHBOARD */
+.dashboardHideLink {
+  display: none;
+}
+.dashboardWrapper {
+  position: relative
+}
+.dashboardWrapper h2 {
+  padding: 0px 0px 0px 45px
+}
+.dashboardWrapper h3 {
+  font-size: 14px;
+  font-weight: bold
+}
+.dashboardIcon {
+  position: absolute;
+  top: 2px;
+  left: 2px
+}
+
+.umb-dashboard-control
+  iframe{ position: absolute; display: block; width: 99%; height: 99%; overflow: auto !important;}
+
+
+/* TABLE */
+.umb-table {
+  table-layout: fixed;
+  word-wrap: break-word;
+}
+.umb-no-border {
+  border: none !important;
+}
+
+table thead a {
+  color: @gray-2;
+}
+
+/* UI interactions */
+
+.umb-table tbody.ui-sortable tr
+{
+    cursor:pointer;
+}
+
+.umb-table tbody.ui-sortable tr.ui-sortable-helper {
+  background-color: @sortableHelperBg;
+  border: none;
+}
+.umb-table tbody.ui-sortable tr.ui-sortable-helper td
+ {
+    border:none;
+}
+
+.umb-table tbody.ui-sortable tr.ui-sortable-placeholder {
+  background-color: @sortablePlaceholderBg;
+  border:none;
+}
+
+.umb-table tbody.ui-sortable tr.ui-sortable-placeholder td
+{
+    height:5px;
+    padding:0px;
+    line-height:0px;
+}
+
+/* MEDIA PICKER */
+
+.thumbnails > li.umb-thumbnail {
+  margin: 0 10px 10px 0;
+  position: relative;
+}
+
+.thumbnails > li.umb-thumbnail .umb-icons {
+  background: @gray-1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 17px 0
+}
+
+.thumbnails > li.umb-thumbnail .icon-crop {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color: @white;
+  font-size: 14px
+}
+
+.thumbnails > li.umb-thumbnail .icon-remove {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: @white;
+  font-size: 14px
+}
+
+/* IMAGE CROPPER */
+
+.umb-image-crop {
+  margin: 0 30px 25px 0;
+  padding: 0 0 30px 0;
+  width: 400px;
+  float: left
+}
+
+.umb-image-mask {
+  width: 399px;
+  height: 300px;
+  position: relative;
+  margin: 0 30px 0 0
+}
+
+.umb-image-mask:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5999;
+  opacity: .6;
+  filter: alpha(opacity=6);
+  -webkit-box-shadow: inset 0 0 0 40px white,inset 0 0 0 41px rgba(0,0,0,0.2),inset 0 0 20px 41px rgba(0,0,0,0.2);
+  box-shadow: inset 0 0 0 40px white,inset 0 0 0 41px rgba(0,0,0,0.2),inset 0 0 20px 41px rgba(0,0,0,0.2);
+}
+
+.umb-image-mask .icon-screenshot {
+  color: @white;
+  font-size: 30px;
+  position: absolute;
+  top: 125px;
+  left: 110px;
+  z-index: 1000;
+}
+
+.umb-image-mask .icon-circle {
+  color: @turquoise-d1;
+  position: absolute;
+  top: 130px;
+  left: 115px;
+  z-index: 1;
+  font-size: 20px
+}
+
+.umb-crop-preview {
+  float: left;
+  width: 400px
+}
+
+
+.umb-image-controls {
+  width: 400px; /* Need to be set dynamic, accounding to the width of the current image */
+}
+
+.umb-image-controls .icon-minus {
+  float: left;
+  padding: 14px 10px 0 10px;
+  color: @inputBorder;
+}
+
+.umb-image-controls .icon-plus {
+  float: right;
+  text-align: left;
+  padding: 14px 10px 0 10px;
+  color: @inputBorder;
+}
+
+.umb-image-crop .range {
+  display: block;
+  -webkit-appearance: none;
+  background: @inputBorder;
+  height: 1px;
+  margin: 20px 0 0 0;
+  width: 82%;
+  float: left;
+}
+
+.umb-image-crop .range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width:14px;
+  height:14px;
+  border:1px solid @inputBorder;
+  border-radius:2px;
+  content:"1";
+  background: @gray-10;
+  margin-top: -1px;
+}
+
+/* SEARCH */
+
+.umb-search-group li > div {
+    padding-left: 20px;
+}
+
+.umb-search-group li > div a > i {
+    height: 100%;
+}
+
+#search-form .form-search div {
+    margin-top:3px;
+}
+#search-form .form-search div .btn {
+    position:relative;
+    top:0;
+    left:0;
+}
+
+/* DICTIONARY */
+#dictionaryItems tr {
+    border-top:solid 1px @gray-8;
+}
+
+#dictionaryItems thead tr {
+    border-top:none;
+    font-weight:bold;
+}
+
+#dictionaryItems th {
+    text-align:left;
+    font-weight:normal;
+}
+
+#dictionaryItems td {
+    text-align:center;
+ }
+
+#dictionaryItems thead td:first-of-type {
+    text-align: left;
+}
+
+#dictioanryItems i {
+    font-size:18px;
+}
+
+#dictionaryItems .icon-alert {
+    color:@red;
+}
+
+#dictionaryItems .icon-check {
+    color:@green;
+}
+
+// Loading Animation
+// ------------------------
+
+.umb-loader{
+background-color: @turquoise-d1;
+margin-top:0;
+margin-left:-100%;
+-moz-animation-name:bounce_loadingProgressG;
+-moz-animation-duration:1s;
+-moz-animation-iteration-count:infinite;
+-moz-animation-timing-function:linear;
+-webkit-animation-name:bounce_loadingProgressG;
+-webkit-animation-duration:1s;
+-webkit-animation-iteration-count:infinite;
+-webkit-animation-timing-function:linear;
+-ms-animation-name:bounce_loadingProgressG;
+-ms-animation-duration:1s;
+-ms-animation-iteration-count:infinite;
+-ms-animation-timing-function:linear;
+-o-animation-name:bounce_loadingProgressG;
+-o-animation-duration:1s;
+-o-animation-iteration-count:infinite;
+-o-animationtiming-function:linear;
+animation-name:bounce_loadingProgressG;
+animation-duration:1s;
+animation-iteration-count:infinite;
+animation-timing-function:linear;
+width:100%;
+height:1px;
+}
+
+
+    @-moz-keyframes bounce_loadingProgressG{
+    0%{
+    margin-left:-100%;
+    }
+
+    100%{
+    margin-left:100%;
+    }
+
+    }
+
+    @-webkit-keyframes bounce_loadingProgressG{
+    0%{
+    margin-left:-100%;
+    }
+
+    100%{
+    margin-left:100%;
+    }
+
+    }
+
+    @-ms-keyframes bounce_loadingProgressG{
+    0%{
+    margin-left:-100%;
+    }
+
+    100%{
+    margin-left:100%;
+    }
+
+    }
+
+    @-o-keyframes bounce_loadingProgressG{
+    0%{
+    margin-left:-100%;
+    }
+
+    100%{
+    margin-left:100%;
+    }
+
+    }
+
+    @keyframes bounce_loadingProgressG{
+    0%{
+    margin-left:-100%;
+    }
+    100%{
+    margin-left:100%;
+    }
+}
+
+.umb-loader-wrapper {
+
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: 10px 0;
+    overflow: hidden;
+
+}
+
+.umb-loader-wrapper.-bottom {
+	bottom: 0;
+}
+
+// Helpers
+
+.strong {
+	font-weight: bold;
+}
+
+.inline {
+	display: inline;
+}
+
+
+// Input label styles
+// @Simon: not sure where to put this part yet
+// --- TODO Needs to be divided into the right .less directories
+
+
+// Titles for input fields
+.input-label--title {
+	font-weight: bold;
+	color: @black;
+
+	margin-bottom: 3px;
+}
+
+
+// Used for input checkmark fields
+.input-label--small {
+	display: inline;
+
+	font-size: 12px;
+	font-weight: bold;
+	color: @gray-3;
+
+	&:hover {
+		color: @black;
+	}
+}
+
+input[type=checkbox]:checked + .input-label--small {
+	color: @turquoise-d1;
+}
+
+
+// Use this for headers in the panels
+.panel-dialog--header {
+	border-bottom: 1px solid @gray-3;
+	margin: 10px 0;
+	padding-bottom: 10px;
+	font-size: @fontSizeLarge;
+	font-weight: bold;
+	line-height: 20px;
+}
+
+
+// Datepicker styles
+.bootstrap-datetimepicker-widget,
+.bootstrap-datetimepicker-widget td,
+.bootstrap-datetimepicker-widget th,
+.bootstrap-datetimepicker-widget td span {
+	border-radius: 0 !important;
+}
